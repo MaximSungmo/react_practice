@@ -1,7 +1,3 @@
-# react_practice
-react_practice
-
-
 # 1장 
 
 ## 1.  리액트 앱 직접 만들기
