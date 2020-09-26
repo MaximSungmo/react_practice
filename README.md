@@ -134,6 +134,63 @@ process.env.REACT_APP_API_URL
 환경변수를 위한 파일은 env.development, env.production 등의 각 서버 타입에 따라 파일로 만들 수 있다. 
 
 
+## 5. CSS 작성 방법 결정하기
+
+### 1. CSS 파일로 작성
+별도의 CSS 파일을 만들어서 CSS 작성하기 
+```
+.big{
+    width:200px; 
+}
+....
+
+```
+
+단점 : 이름이 충돌해서 build 시 마지막으로 선언된 속성이 적용이 되어 에러가 날 수 있다. 
+
+### 2. CSS 모듈로 작성
+```
+.big{
+    width:200px; 
+}
+....
+
+```
+
+다음의 모듈을 통해서 클래스네임을 쉽게 작성해줄 수 있음.
+```
+npm install classnames 
+```
+
+장점 : 이름 충돌의 단점을 해결할 수 있다. 각 모듈 내 객체에 해시값으로 이름 충돌이 나지 않게끔 도움 
+
+
+### 3. SASS 로 작성
+
+```
+npm install node-sass
+```
+
+css 파일 이름은 scss로 작성해야함
+
+
+### 4. CSS-IN-JS 로 작성
+
+css 코드가 자바스크립트 코드 안에서 작성이 되므로 동적으로 css 작성하기도 쉽고 컴포넌트 내에 있으므로 한눈에 보기가 쉬움
+
+```
+npm install styled-components
+```
+
+```
+import styled from 'syled-components';
+
+const Button = styled.button`
+    width: ;
+`
+```
+
+
 
 
 
