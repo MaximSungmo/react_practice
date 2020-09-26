@@ -22,12 +22,12 @@ export default React.memo(Title);
 따라서 props로 넘어온 값을 수정하고 싶다면 부모 컴포넌트에서 상태값 변경을 하는 방식을 이용해야한다.
 
 ```
-    // 객체의 참조값만 변경된 경우에는 리액트입장에서 값이 변경되지 않았다고 생각한다.
-    // 따라서 이를 불변 변수로 관리하기 위하여 전개연산자(스프레드) 를 이용한다.
-    function onClick3(){
-        // count3.value += 1;
-        // setCount3(count3);
-        setCount3({...count3, value: count3.value +1})
-    }
+// 객체의 참조값만 변경된 경우에는 리액트입장에서 값이 변경되지 않았다고 생각한다.
+// 따라서 이를 불변 변수로 관리하기 위하여 전개연산자(스프레드) 를 이용한다.
+function onClick3(){
+    // count3.value += 1;
+    // setCount3(count3);
+    setCount3({...count3, value: count3.value +1})
+}
 ```
 
