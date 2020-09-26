@@ -89,9 +89,49 @@ npm install webpack webpack-cli react react-dom
 npx webpack
 ```
 
-위의 작업을 완료하면 웹팩을 설치하고 dist 에 파일을 번들링시킨다.
+위의 작업을 완료하면 웹팩을 설치하고 dist 에 파일을 번들링시킨다.    
 
 
+## 4. create-react-app 시작하기
+
+```
+npx create-react-app ${프로젝트명}
+```
+
+CRA 에서 사용되는 4개 명령어
+```
+npm start
+HTTPS=true npm start
+(윈도우용) set HTTPS=true && npm start // 실행해보니 제대로 작동하지는 않음....
+```
+
+```
+npm run build
+npx serve -s build
+```
+
+
+```
+npm test
+```
+
+현재 파일의 설정을 고정시켜 수출하는 방식(최신 react-scripts 의 기능을 별도로 잡아줘야함)
+```
+npm eject
+```
+
+
+polyfill 을 통해 브라우저 호환성을 챙겨줄 수 있다.
+caniuse.com 에서 함수가 브라우저에서 지원이 되는 지 알 수 있다. 
+
+
+환경 변수를 보는 방법은  process.env.{변수명} 
+```
+process.env.NODE_ENV 
+process.env.REACT_APP_API_URL 
+```
+
+환경변수를 위한 파일은 env.development, env.production 등의 각 서버 타입에 따라 파일로 만들 수 있다. 
 
 
 
