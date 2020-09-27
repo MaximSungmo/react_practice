@@ -1,4 +1,3 @@
-import { remove } from "lodash";
 import { useEffect } from "react";
 import { addKeyObserver, removeKeyObserver } from "../util/keyboard";
 import { makeTile, moveTile } from "../util/tile";
