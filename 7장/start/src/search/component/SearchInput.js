@@ -1,5 +1,5 @@
 import React from 'react';
-import { AutoComplete, Input, Menu } from 'antd';
+import { AutoComplete, Input, Menu, Space, Typography } from 'antd';
 import { SearchOutlined } from '@ant-design/icons';
 import { useDispatch, useSelector } from 'react-redux';
 import { actions } from '../state';
@@ -27,12 +27,21 @@ export default function SearchInput() {
             style={{
                 width: '100%',
             }}
-            options={[]}
+            options={autoCompletes.map(item=>({
+                value: item.name,
+                label: (
+                    <Space>
+                        <Typography.Text strong>{item.name}</Typography.Text>
+                        <Typography.Text type="secondary">{item.department}</Typography.Text>
+                        <Typography.Text>{item.tag}</Typography.Text>
+                    </Space>
+                )
+            }))}
             autoFocus
         >
             <Input
                 size="large" 
-                placeholder="input here"
+                placeholder="검색어를 입력해주세요."
                 prefix={<SearchOutlined />} 
             />
         </AutoComplete>

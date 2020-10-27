@@ -1,5 +1,5 @@
 import { all } from "redux-saga/effects";
-import { Types } from "../../common/state";
+import { Types } from "../../search/state";
 
 import { put, call, takeEvery } from 'redux-saga/effects';
 import { actions } from './index';
