@@ -28,7 +28,7 @@ app.get('/user/search', (req, res) => {
         res.send(makeResponse({ data: rows }));
       },
     );
-  }, 1);
+  }, 2000);
 });
 app.get('/history', (req, res) => {
   setTimeout(() => {

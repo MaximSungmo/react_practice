@@ -7,7 +7,7 @@ export default function useFetchInfo(actionType, fetchKey) {
   const _fetchKey = getFetchKey({
     type: actionType,
     [FETCH_KEY]: fetchKey,
-  });
+  });  
   return useSelector(
     state => ({
       fetchStatus:
@@ -15,7 +15,7 @@ export default function useFetchInfo(actionType, fetchKey) {
       isFetching:
         state.common.fetchInfo.fetchStatusMap[actionType]?.[_fetchKey] ===
         FetchStatus.Request,
-      isFetched:
+      isFetched:        
         state.common.fetchInfo.fetchStatusMap[actionType]?.[_fetchKey] ===
           FetchStatus.Success ||
         state.common.fetchInfo.fetchStatusMap[actionType]?.[_fetchKey] ===

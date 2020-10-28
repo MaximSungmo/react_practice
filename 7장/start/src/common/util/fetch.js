@@ -125,8 +125,8 @@ export function getApiCacheKey(actionType, { apiHost, url, params }) {
   }
 }
 
-export function getFetchKey(action) {
-  const fetchKey = action[FETCH_KEY];
+export function getFetchKey(action) {  
+  const fetchKey = action[FETCH_KEY];    
   return fetchKey === undefined ? action.type : String(fetchKey);
 }
 

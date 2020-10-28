@@ -1,9 +1,9 @@
 import { all } from "redux-saga/effects";
 import { Types } from "../../search/state";
-
 import { put, call, takeEvery } from 'redux-saga/effects';
 import { actions } from './index';
 import { callApi } from '../../common/util/api';
+import { makeFetchSaga } from "../../common/util/fetch";
 
 function* fetchAutoComplete({ keyword }) {
     const { isSuccess, data } = yield call(callApi, {
@@ -18,6 +18,8 @@ function* fetchAutoComplete({ keyword }) {
 
 export default function* () {
     yield all([
-        takeEvery(Types.FetchAutoComplete, fetchAutoComplete)
-    ])
+        takeEvery(
+            Types.FetchAutoComplete,
+            makeFetchSaga({ fetchSaga: fetchAutoComplete, canCache: true })
+        )]);
 }
